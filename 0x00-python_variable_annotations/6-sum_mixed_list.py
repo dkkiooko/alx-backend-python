@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """type-annotated function
 """
-from typing import Union
+from typing import Union, List
 
 
-def sum_mixed_list(mxld_lst: List[Union[int, float]]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """sum of int and float"""
-    return float(sum(mxld_lst))
+    return float(sum(mxd_lst))

@@ -6,4 +6,4 @@
 def add(a: float, b: float) -> float:
     """annotated function
     """
-    return a + b
+    return float(a + b)
