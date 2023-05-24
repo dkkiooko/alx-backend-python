@@ -3,7 +3,8 @@
 import unittest
 from client import GithubOrgClient
 from unittest.mock import (
-    MagicMock
+    MagicMock,
+    patch
 )
 from parameterized import parameterized
 
@@ -11,9 +12,10 @@ from parameterized import parameterized
 class TestGithubOrgClient(unittest.TestCase):
     """ tests the `GithubOrgClient` class """
     @parameterized.expand([
-        ("google"),
-        ("abc")
+        ("google", {'login': "google"}),
+        ("abc", {'login': "abc"})
     ])
+    @patch("client.get_json")
     def test_org(self, org, resp, mock):
         """ test the org method """
         mock = MagicMock(return_value=resp)
